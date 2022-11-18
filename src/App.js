@@ -1,8 +1,10 @@
+import Delivery from "./pages/Delivery/Delivery";
 
 function App() {
   return (
     <div>
-      <h1>Proyect Delivery App</h1>
+
+      <Delivery />
     </div>
   );
 }
