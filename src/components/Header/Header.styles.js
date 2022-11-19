@@ -8,5 +8,3 @@ export const styleContact = {
   display: "flex",
 
 }
-
-

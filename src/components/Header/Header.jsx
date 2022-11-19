@@ -15,8 +15,7 @@ const Header = () => {
         </Typography>
         <Box sx={styleContact}>
           <Typography
-            variant="h1"
-            sx={{ fontSize: 16, mr: 1, fontWeight: "200" }}
+            sx={{ fontFamily: "'Inter', sans-serif", fontSize: 16, mr: 1 }}
           >
             Regina Zepeda
           </Typography>
