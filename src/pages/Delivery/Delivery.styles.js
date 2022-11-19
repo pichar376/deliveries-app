@@ -2,6 +2,6 @@ export const styleDelivery = {
   display: "flex",
   flexDirection: "column",
   margin: "3rem auto",
-  width: "1152px",
-  height: "1251px",
-}
+  maxWidth: "1152px",
+  MaxHeight: "1251px",
+} 
