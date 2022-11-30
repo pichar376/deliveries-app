@@ -11,19 +11,23 @@ export default function Input() {
       sx={{
         p: "2px 4px",
         display: "flex",
+        height: 34,
         alignItems: "center",
         width: 240,
-        height: 40,
-        boxShadow: `0px 1px 4px  rgba(0, 0, 0, 0.15)`,
+        boxShadow: "0px 1px 4px rgba(0, 0, 0, 0.1)",
+        border: "1px solid rgba(0, 0, 0, 0.15);",
       }}
     >
-      <SearchIcon sx={{ color: "#00000055" }} />
-      <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search" />
-      <IconButton
-        type="button"
-        sx={{ p: "10px" }}
-        aria-label="search"
-      ></IconButton>
+      <SearchIcon sx={{ color: "#00000055", ml: "10px" }} />
+      <InputBase
+        sx={{
+          ml: 1,
+          flex: 1,
+          fontSize: "0.875rem",
+          padding: "8px 16px",
+        }}
+        placeholder="Search"
+      />
     </Paper>
   );
 }

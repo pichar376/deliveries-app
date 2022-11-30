@@ -1,6 +1,5 @@
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
-import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import EditIcon from "@mui/icons-material/Edit";
@@ -11,6 +10,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { buttonDetailStyle } from "../../buttonDelivery.styles";
 import { Typography } from "@mui/material";
+import Button from "../Button/Button";
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -65,27 +65,20 @@ const MenuDelivery = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "flex-end",
+      }}
+    >
       <Button
-        id="demo-customized-button"
-        aria-controls={open ? "demo-customized-menu" : undefined}
-        aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         sx={buttonDetailStyle}
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon style={{ color: "#00000075" }} />}
       >
-        <Typography
-          sx={{
-            color: "#000",
-            fontWeight: "500",
-            fontFamily: "'Inter', sans-serif",
-            fontSize: 16,
-          }}
-        >
-          Actions
-        </Typography>
+        Actions
       </Button>
       <StyledMenu
         id="demo-customized-menu"

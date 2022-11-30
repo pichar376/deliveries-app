@@ -1,23 +1,21 @@
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { buttonDetailStyle } from "../../buttonDelivery.styles";
 import { BsLayoutTextSidebar } from "react-icons/bs";
+import Button from "../Button/Button";
 
 const ButtonDetails = () => {
   return (
     <Button
-      sx={buttonDetailStyle}
-      endIcon={<BsLayoutTextSidebar style={{ color: "#00000075" }} />}
+      endIcon={
+        <BsLayoutTextSidebar style={{ color: "#00000075", fontSize: "16px" }} />
+      }
+      sx={{
+        color: "#000",
+        fontWeight: "500",
+        fontSize: 16,
+      }}
     >
-      <Typography
-        sx={{
-          color: "#000",
-          fontWeight: "500",
-          fontFamily: "'Inter', sans-serif",
-          fontSize: 16,
-        }}
-      >
-        Details
-      </Typography>
+      Details
     </Button>
   );
 };

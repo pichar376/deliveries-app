@@ -1,15 +1,19 @@
-import { Box, Input } from "@mui/material";
+import { Box, Input, ThemeProvider } from "@mui/material";
 import Header from "../../components/Header/Header";
 import { styleDelivery } from "./Delivery.styles";
 import Search from "../../components/Search/Search";
 import TableData from "../../components/TableData/Table-data";
+import theme from "../../globalThem";
+
 const Delivery = () => {
   return (
-    <Box sx={styleDelivery}>
-      <Header />
-      <Search />
-      <TableData />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={styleDelivery}>
+        <Header />
+        <Search />
+        <TableData />
+      </Box>
+    </ThemeProvider>
   );
 };
 
