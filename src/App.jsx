@@ -1,11 +1,12 @@
+import { ThemeProvider } from "@mui/material";
+import "./App.css";
+import theme from "./globalThem";
 import Delivery from "./pages/Delivery/Delivery";
 
 function App() {
   return (
-    <div>
-
+    <div className="App">
       <Delivery />
-
     </div>
   );
 }
