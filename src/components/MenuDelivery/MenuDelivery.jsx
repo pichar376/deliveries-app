@@ -81,7 +81,6 @@ const MenuDelivery = () => {
         Actions
       </Button>
       <StyledMenu
-        id="demo-customized-menu"
         MenuListProps={{
           "aria-labelledby": "demo-customized-button",
         }}
