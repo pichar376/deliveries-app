@@ -11,6 +11,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { buttonDetailStyle } from "../../buttonDelivery.styles";
 import { Typography } from "@mui/material";
 import Button from "../Button/Button";
+
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -72,22 +73,15 @@ const MenuDelivery = () => {
       }}
     >
       <Button
-        aria-expanded={open ? "true" : undefined}
         sx={buttonDetailStyle}
+        aria-expanded={open ? "true" : undefined}
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon style={{ color: "#00000075" }} />}
       >
         Actions
       </Button>
-      <StyledMenu
-        MenuListProps={{
-          "aria-labelledby": "demo-customized-button",
-        }}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
+      <StyledMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={handleClose} disableRipple>
           Edit
         </MenuItem>

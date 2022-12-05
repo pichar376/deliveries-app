@@ -12,14 +12,15 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import dataBase from "../../dataBase";
-import ButtonDetails from "../ButtonDetails/ButtonDetails";
 import MenuDelivery from "../MenuDelivery/MenuDelivery";
+import { BsLayoutTextSidebar } from "react-icons/bs";
 import {
   dataStyle,
   inputStyles,
   labelStyle,
   tableCellStyles,
 } from "./table.styles";
+import ButtonTable from "../ButtonTable/ButtonTable";
 
 const TableData = () => {
   return (
@@ -68,7 +69,7 @@ const TableData = () => {
               <TableCell>
                 <Stack direction="row" sx={{ gap: "16px" }}>
                   <Box mr="auto" />
-                  <ButtonDetails />
+                  <ButtonTable Icon={BsLayoutTextSidebar}>Details</ButtonTable>
                   <MenuDelivery />
                 </Stack>
               </TableCell>
