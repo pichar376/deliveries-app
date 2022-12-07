@@ -20,7 +20,7 @@ import {
   labelStyle,
   tableCellStyles,
 } from "./table.styles";
-import ButtonTable from "../ButtonTable/ButtonTable";
+import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
 
 const TableData = () => {
   return (
@@ -69,7 +69,9 @@ const TableData = () => {
               <TableCell>
                 <Stack direction="row" sx={{ gap: "16px" }}>
                   <Box mr="auto" />
-                  <ButtonTable Icon={BsLayoutTextSidebar}>Details</ButtonTable>
+                  <ButtonSecondary Icon={BsLayoutTextSidebar}>
+                    Details
+                  </ButtonSecondary>
                   <MenuDelivery />
                 </Stack>
               </TableCell>

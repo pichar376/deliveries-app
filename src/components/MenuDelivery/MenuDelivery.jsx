@@ -10,7 +10,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { buttonDetailStyle } from "../../buttonDelivery.styles";
 import { Typography } from "@mui/material";
-import Button from "../Button/Button";
+import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -72,15 +72,14 @@ const MenuDelivery = () => {
         justifyContent: "flex-end",
       }}
     >
-      <Button
-        sx={buttonDetailStyle}
+      <ButtonSecondary
         aria-expanded={open ? "true" : undefined}
         disableElevation
         onClick={handleClick}
-        endIcon={<KeyboardArrowDownIcon style={{ color: "#00000075" }} />}
+        Icon={KeyboardArrowDownIcon}
       >
         Actions
-      </Button>
+      </ButtonSecondary>
       <StyledMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={handleClose} disableRipple>
           Edit

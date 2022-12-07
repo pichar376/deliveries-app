@@ -1,8 +1,6 @@
-import { Typography } from "@mui/material";
-import { buttonDetailStyle } from "../../buttonDelivery.styles";
 import Button from "../Button/Button";
 
-const ButtonTable = ({ Icon, children }) => {
+const ButtonSecondary = ({ Icon, children, ...rest }) => {
   return (
     <Button
       endIcon={<Icon style={{ color: "#00000075", fontSize: "16px" }} />}
@@ -11,10 +9,11 @@ const ButtonTable = ({ Icon, children }) => {
         fontWeight: "500",
         fontSize: 16,
       }}
+      {...rest}
     >
       {children}
     </Button>
   );
 };
 
-export default ButtonTable;
+export default ButtonSecondary;
