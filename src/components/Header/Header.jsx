@@ -3,7 +3,12 @@ import { BsPersonCircle } from "react-icons/bs";
 
 const Header = () => {
   return (
-    <header style={{ display: "flex" }}>
+    <header
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <Typography
         variant="h1"
         sx={{

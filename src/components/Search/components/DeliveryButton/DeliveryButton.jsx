@@ -10,7 +10,11 @@ export default function DeliveryButton() {
         textTransform: "none",
         width: 132,
         backgroundColor: "#307460",
-        padding: "8px 16px",
+        padding: "6px 16px",
+        border: 0,
+        ":hover": {
+          backgroundColor: "#307465",
+        },
       }}
     >
       New Delivery

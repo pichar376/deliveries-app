@@ -4,7 +4,7 @@ import Input from "./components/Input/Input";
 
 const Search = () => {
   return (
-    <Box sx={{ display: "flex", mt: "3rem" }}>
+    <Box sx={{ display: "flex", mt: "3rem", alignItems: "center" }}>
       <Box sx={{ display: "flex", flexGrow: 1 }}>
         <Typography
           color="initial"
@@ -14,6 +14,7 @@ const Search = () => {
         </Typography>
         <Typography
           sx={{
+            display: "flex",
             color: "#00000060",
             fontSize: "30px",
             fontWeight: 300,
