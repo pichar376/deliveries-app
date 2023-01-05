@@ -1,14 +1,18 @@
 import { Autocomplete, Box, Typography } from "@mui/material";
+import { useState } from "react";
 import { buttonStyle, labelTextModals } from "../../global.styles";
 import TextFieldBase from "../TextFieldBase/TextFeldBase";
 const optionDefault = ["no options"];
 
-const AutocompleteBase = ({ options, labelProp, startAdornment, ...rest }) => {
+const AutocompleteBase = ({
+  options,
+  labelProp,
+  startAdornment,
+  label,
+  onChange,
+}) => {
   return (
     <Box>
-      <Typography sx={labelTextModals} htmlFor="autocomplete">
-        {labelProp}
-      </Typography>
       <Autocomplete
         sx={{
           ...buttonStyle,
@@ -30,7 +34,12 @@ const AutocompleteBase = ({ options, labelProp, startAdornment, ...rest }) => {
         options={options ? options : optionDefault}
         id="autocomplete"
         renderInput={(params) => (
-          <TextFieldBase {...params} startAdornment={startAdornment} />
+          <TextFieldBase
+            {...params}
+            startAdornment={startAdornment}
+            onChange={onChange}
+            label={label}
+          />
         )}
       />
     </Box>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Button from "../../../Button/Button";
 
-export default function DeliveryButton() {
+export default function DeliveryButton({ onClick }) {
   return (
     <Button
       variant="contained"
@@ -16,6 +16,7 @@ export default function DeliveryButton() {
           backgroundColor: "#307465",
         },
       }}
+      onClick={onClick}
     >
       New Delivery
     </Button>

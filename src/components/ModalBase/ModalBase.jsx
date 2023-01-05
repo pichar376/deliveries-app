@@ -1,5 +1,4 @@
-import { Box, Button, IconButton, Modal, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, IconButton, Modal, Typography } from "@mui/material";
 import { modalStyle, titleStyles } from "./Modal.styles";
 import ClearIcon from "@mui/icons-material/Clear";
 
@@ -8,18 +7,14 @@ const ModalBase = ({
   descriptionModal,
   renderBody,
   renderFooter,
+  openModal,
+  handleClick,
 }) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   return (
-    <div>
-      <Button onClick={handleOpen}>Open modal</Button>
-
+    <Box>
       <Modal
         sx={{}}
-        open={open}
-        onClose={handleClose}
+        open={openModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -27,6 +22,7 @@ const ModalBase = ({
           <Box>
             <Typography sx={titleStyles}>{titleModal}</Typography>
             <IconButton
+              onClick={handleClick}
               sx={{
                 position: "absolute",
                 right: "20px",
@@ -44,7 +40,7 @@ const ModalBase = ({
           {renderFooter && <Box>{renderFooter()}</Box>}
         </Box>
       </Modal>
-    </div>
+    </Box>
   );
 };
 
