@@ -1,34 +1,35 @@
 import {
-  Button,
-  Paper,
   Stack,
   Table,
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import dataBase from "../../dataBase";
 import MenuDelivery from "../MenuDelivery/MenuDelivery";
 import { BsLayoutTextSidebar } from "react-icons/bs";
-import {
-  dataStyle,
-  inputStyles,
-  labelStyle,
-  tableCellStyles,
-} from "./table.styles";
+import { dataStyle, labelStyle, tableCellStyles } from "./table.styles";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
 
-const TableData = () => {
+const TableData = ({ deliveryHistory }) => {
   return (
     <TableContainer sx={{ mt: "50px" }}>
       <Table>
         <TableBody>
-          {dataBase.map((row) => (
-            <TableRow key={row.orderId} style={{ height: "104px" }}>
+          {deliveryHistory.map((row, index) => (
+            <TableRow
+              key={index}
+              sx={{
+                height: "104px",
+                "&&.MuiTableRow-root": {
+                  ...(row.status === "Pending" && {
+                    borderBottom: "2px solid #307460",
+                  }),
+                },
+              }}
+            >
               <TableCell sx={{ ...tableCellStyles, width: "90px" }}>
                 <Box>
                   <Typography sx={labelStyle}>Status</Typography>

@@ -1,14 +1,17 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-import DeliveryModal from "../../pages/Delivery/components/DeliveryModal/DeliveryModal";
 import DeliveryButton from "./components/DeliveryButton/DeliveryButton";
+import DeliveryModal from "./components/DeliveryModal/DeliveryModal";
 import Input from "./components/Input/Input";
 
-const Search = () => {
+const Search = ({ deliveryHistory, setDeliveryHistory }) => {
   const [openModal, setOpenModal] = useState(false);
 
-  const handleClick = () => {
-    setOpenModal(!openModal);
+  const handleOpen = () => {
+    setOpenModal(true);
+  };
+  const handleClose = () => {
+    setOpenModal(false);
   };
   return (
     <Box sx={{ display: "flex", mt: "3rem", alignItems: "center" }}>
@@ -31,12 +34,14 @@ const Search = () => {
         </Typography>
       </Box>
       <Input />
-      <DeliveryButton onClick={handleClick} />
+      <DeliveryButton onClick={handleOpen} />
       {openModal && (
         <DeliveryModal
+          deliveryHistory={deliveryHistory}
+          setDeliveryHistory={setDeliveryHistory}
           openModal={openModal}
           setOpenModal={setOpenModal}
-          handleClick={handleClick}
+          onClose={handleClose}
         />
       )}
     </Box>

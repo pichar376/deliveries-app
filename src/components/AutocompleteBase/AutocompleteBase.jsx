@@ -6,10 +6,10 @@ const optionDefault = ["no options"];
 
 const AutocompleteBase = ({
   options,
-  labelProp,
   startAdornment,
   label,
   onChange,
+  value,
 }) => {
   return (
     <Box>
@@ -31,13 +31,14 @@ const AutocompleteBase = ({
           },
         }}
         disablePortal
-        options={options ? options : optionDefault}
+        value={value}
+        onChange={onChange}
+        options={options}
         id="autocomplete"
         renderInput={(params) => (
           <TextFieldBase
             {...params}
             startAdornment={startAdornment}
-            onChange={onChange}
             label={label}
           />
         )}

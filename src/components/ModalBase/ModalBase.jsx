@@ -1,5 +1,10 @@
 import { Box, IconButton, Modal, Typography } from "@mui/material";
-import { modalStyle, titleStyles } from "./Modal.styles";
+import {
+  containerStyles,
+  footerStyles,
+  modalStyle,
+  titleStyles,
+} from "./Modal.styles";
 import ClearIcon from "@mui/icons-material/Clear";
 
 const ModalBase = ({
@@ -8,39 +13,37 @@ const ModalBase = ({
   renderBody,
   renderFooter,
   openModal,
-  handleClick,
+  onClose,
 }) => {
   return (
-    <Box>
-      <Modal
-        sx={{}}
-        open={openModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={modalStyle}>
-          <Box>
-            <Typography sx={titleStyles}>{titleModal}</Typography>
-            <IconButton
-              onClick={handleClick}
-              sx={{
-                position: "absolute",
-                right: "20px",
-                top: "20px",
-              }}
-            >
-              <ClearIcon />
-            </IconButton>
-          </Box>
+    <Modal
+      sx={{}}
+      open={openModal}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box sx={modalStyle}>
+        <Box sx={containerStyles}>
+          <Typography sx={titleStyles}>{titleModal}</Typography>
+          <IconButton
+            onClick={onClose}
+            sx={{
+              position: "absolute",
+              right: "29px",
+              top: "29px",
+            }}
+          >
+            <ClearIcon />
+          </IconButton>
+
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             {descriptionModal}
           </Typography>
           {renderBody && <Box>{renderBody()}</Box>}
-
-          {renderFooter && <Box>{renderFooter()}</Box>}
         </Box>
-      </Modal>
-    </Box>
+        {renderFooter && <Box sx={footerStyles}>{renderFooter()}</Box>}
+      </Box>
+    </Modal>
   );
 };
 
