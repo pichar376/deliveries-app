@@ -1,6 +1,5 @@
-import { ThemeProvider } from "@mui/material";
+import { Router } from "react-router-dom";
 import "./App.css";
-import theme from "./globalThem";
 import Delivery from "./pages/deli/Delivery";
 
 function App() {

@@ -1,8 +1,6 @@
-import { Autocomplete, Box, Typography } from "@mui/material";
-import { useState } from "react";
-import { buttonStyle, labelTextModals } from "../../global.styles";
+import { Autocomplete, Box } from "@mui/material";
+import { buttonStyle } from "../../global.styles";
 import TextFieldBase from "../TextFieldBase/TextFeldBase";
-const optionDefault = ["no options"];
 
 const AutocompleteBase = ({
   options,

@@ -12,8 +12,14 @@ import MenuDelivery from "../MenuDelivery/MenuDelivery";
 import { BsLayoutTextSidebar } from "react-icons/bs";
 import { dataStyle, labelStyle, tableCellStyles } from "./table.styles";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
+import { useNavigate } from "react-router-dom";
 
-const TableData = ({ deliveryHistory }) => {
+const TableData = ({ deliveryHistory, setDeliveryHistory }) => {
+  const navigate = useNavigate();
+
+  const findRow = (id) => {
+    navigate(`/shipment/${id}`);
+  };
   return (
     <TableContainer sx={{ mt: "50px" }}>
       <Table>
@@ -70,7 +76,12 @@ const TableData = ({ deliveryHistory }) => {
               <TableCell>
                 <Stack direction="row" sx={{ gap: "16px" }}>
                   <Box mr="auto" />
-                  <ButtonSecondary Icon={BsLayoutTextSidebar}>
+                  <ButtonSecondary
+                    Icon={BsLayoutTextSidebar}
+                    onClick={() => {
+                      findRow(row.orderId);
+                    }}
+                  >
                     Details
                   </ButtonSecondary>
                   <MenuDelivery />

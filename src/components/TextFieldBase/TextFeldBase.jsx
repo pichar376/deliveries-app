@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, Typography } from "@mui/material";
+import { FormControl, InputLabel } from "@mui/material";
 import { buttonStyle, labelTextModals } from "../../global.styles";
 import { OutlinedInput } from "@mui/material";
 
