@@ -1,6 +1,5 @@
-import { Router } from "react-router-dom";
 import "./App.css";
-import Delivery from "./pages/deli/Delivery";
+import Delivery from "./pages/Delivery/Delivery";
 
 function App() {
   return (
