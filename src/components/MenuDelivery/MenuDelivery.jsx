@@ -121,7 +121,7 @@ const MenuDelivery = ({ orderId, deliveryHistory, setDeliveryHistory }) => {
             return (
               <Box>
                 <Typography variant="h6" align="center">
-                  Are you sure to delete row data delivery
+                  Are you sure to delete {orderId} delivery
                 </Typography>
                 <Stack
                   sx={{
