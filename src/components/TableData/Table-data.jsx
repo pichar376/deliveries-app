@@ -20,6 +20,7 @@ const TableData = ({ deliveryHistory, setDeliveryHistory }) => {
   const findRow = (id) => {
     navigate(`/shipment/${id}`);
   };
+
   return (
     <TableContainer sx={{ mt: "50px" }}>
       <Table>
@@ -84,7 +85,11 @@ const TableData = ({ deliveryHistory, setDeliveryHistory }) => {
                   >
                     Details
                   </ButtonSecondary>
-                  <MenuDelivery />
+                  <MenuDelivery
+                    orderId={row.orderId}
+                    deliveryHistory={deliveryHistory}
+                    setDeliveryHistory={setDeliveryHistory}
+                  />
                 </Stack>
               </TableCell>
             </TableRow>

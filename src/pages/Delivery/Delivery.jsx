@@ -30,7 +30,12 @@ const Delivery = () => {
         <Routes>
           <Route
             path="/"
-            element={<TableData deliveryHistory={deliveryHistory} />}
+            element={
+              <TableData
+                deliveryHistory={deliveryHistory}
+                setDeliveryHistory={setDeliveryHistory}
+              />
+            }
           />
 
           <Route path="/shipment/:id" element={<Shipment />} />

@@ -61,6 +61,7 @@ const DeliveryModal = ({ openModal, onClose, setDeliveryHistory }) => {
   return (
     <>
       <ModalBase
+        iconButton
         onClose={onClose}
         openModal={openModal}
         titleModal="New Delivery"
