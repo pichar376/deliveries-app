@@ -37,44 +37,50 @@ const TableData = ({ deliveryHistory, setDeliveryHistory }) => {
                 },
               }}
             >
-              <TableCell sx={{ ...tableCellStyles, width: "90px" }}>
+              <TableCell sx={{ ...tableCellStyles, width: 90 }}>
                 <Box>
                   <Typography sx={labelStyle}>Status</Typography>
                   <Typography sx={dataStyle}>{row.status}</Typography>
                 </Box>
               </TableCell>
-              <TableCell sx={{ ...tableCellStyles, width: "99px" }}>
+              <TableCell sx={{ ...tableCellStyles, width: 105 }}>
                 <Box>
                   <Typography sx={labelStyle}>OrderId</Typography>
-                  <Typography sx={dataStyle}>{row.orderId}</Typography>
+                  <Typography sx={{ ...dataStyle, width: "7rem" }}>
+                    {row.orderId}
+                  </Typography>
                 </Box>
               </TableCell>
-              <TableCell sx={{ ...tableCellStyles, width: "124px" }}>
+              <TableCell sx={{ ...tableCellStyles, width: 124 }}>
                 <Box>
                   <Typography sx={labelStyle}>Technician</Typography>
-                  <Typography sx={dataStyle}>{row.technician}</Typography>
+                  <Typography sx={{ ...dataStyle, width: "8rem" }}>
+                    {row.technician}
+                  </Typography>
                 </Box>
               </TableCell>
-              <TableCell sx={{ ...tableCellStyles, width: "58px" }}>
+              <TableCell sx={{ ...tableCellStyles, width: 70 }}>
                 <Box>
                   <Typography sx={labelStyle}>Platform</Typography>
                   <Typography sx={dataStyle}>{row.platform}</Typography>
                 </Box>
               </TableCell>
-              <TableCell sx={{ ...tableCellStyles, width: "75px" }}>
+              <TableCell sx={{ ...tableCellStyles, width: 105 }}>
                 <Box>
                   <Typography sx={labelStyle}>Drone</Typography>
                   <Typography sx={dataStyle}>{row.drone}</Typography>
                 </Box>
               </TableCell>
-              <TableCell sx={{ ...tableCellStyles, width: "107px" }}>
+              <TableCell sx={{ ...tableCellStyles, width: 124 }}>
                 <Box>
-                  <Typography sx={labelStyle}>Technical check</Typography>
+                  <Typography sx={{ ...labelStyle, width: "7rem" }}>
+                    Technical check
+                  </Typography>
                   <Typography sx={dataStyle}>{row.technicalCheck}</Typography>
                 </Box>
               </TableCell>
 
-              <TableCell>
+              <TableCell sx={{ padding: "16px 0px 16px 16px" }}>
                 <Stack direction="row" sx={{ gap: "16px" }}>
                   <Box mr="auto" />
                   <ButtonSecondary

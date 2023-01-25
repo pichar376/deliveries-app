@@ -6,7 +6,6 @@ export const labelStyle = {
 export const dataStyle = {
   color: "#000",
   fontWeight: "400",
-  width: "20px",
   fontSize: 16,
 }
 
