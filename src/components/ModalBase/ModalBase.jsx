@@ -6,12 +6,14 @@ import {
   titleStyles,
 } from "./Modal.styles";
 import ClearIcon from "@mui/icons-material/Clear";
+import { Stack } from "@mui/system";
 
 const ModalBase = ({
   titleModal,
   descriptionModal,
   renderBody,
   renderFooter,
+  iconButton,
   openModal,
   onClose,
 }) => {
@@ -24,18 +26,25 @@ const ModalBase = ({
     >
       <Box sx={modalStyle}>
         <Box sx={containerStyles}>
-          <Typography sx={titleStyles}>{titleModal}</Typography>
-          <IconButton
-            onClick={onClose}
-            sx={{
-              position: "absolute",
-              right: "29px",
-              top: "29px",
-            }}
+          <Stack
+            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
-            <ClearIcon />
-          </IconButton>
-
+            <Typography sx={{ ...titleStyles, flexGrow: "1" }}>
+              {titleModal}
+            </Typography>
+            {iconButton && (
+              <IconButton
+                onClick={onClose}
+                sx={{
+                  position: "absolute",
+                  right: "29px",
+                  top: "29px",
+                }}
+              >
+                <ClearIcon />
+              </IconButton>
+            )}
+          </Stack>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             {descriptionModal}
           </Typography>
