@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-import { red } from "@mui/material/colors";
 
 
 
@@ -14,9 +13,11 @@ const theme = createTheme({
       'sans-serif'
     ].join(','),
   },
-  overries: {
-
-  }
+  palette: {
+    primary: {
+      main: "#307465",
+    },
+  },
 });
 
 export default theme;

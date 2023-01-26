@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import "./App.css";
 import theme from "./globalThem";
-import Delivery from "./pages/Delivery/Delivery";
+import Delivery from "./pages/deli/Delivery";
 
 function App() {
   return (
