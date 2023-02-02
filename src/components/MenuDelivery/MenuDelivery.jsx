@@ -9,6 +9,8 @@ import { useState } from "react";
 import ModalDelete from "./components/ModalDelete/ModalDelete";
 import { Box, Stack } from "@mui/system";
 import { Button, Typography } from "@mui/material";
+import ModalEdit from "./components/ModalEdit/ModalEdit";
+import { useModal } from "./hooks/useModal";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -56,14 +58,8 @@ const StyledMenu = styled((props) => (
 const MenuDelivery = ({ orderId, deliveryHistory, setDeliveryHistory }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const [openModalDelete, setOpenModalDelete] = useState(false);
-
-  const openDelete = () => setOpenModalDelete(true);
-
-  const closeDelete = () => {
-    setOpenModalDelete(false);
-    handleClose();
-  };
+  const [isOpenEdit, openModalEdit, closeModalEdit] = useModal();
+  const [isOpenDelete, openModalDelete, closeModalDelete] = useModal();
 
   const open = Boolean(anchorEl);
 
@@ -86,7 +82,7 @@ const MenuDelivery = ({ orderId, deliveryHistory, setDeliveryHistory }) => {
 
     update(filterRows);
 
-    closeDelete();
+    closeModalDelete();
     handleClose();
   };
 
@@ -106,17 +102,27 @@ const MenuDelivery = ({ orderId, deliveryHistory, setDeliveryHistory }) => {
         Actions
       </ButtonSecondary>
       <StyledMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem onClick={openModalEdit} disableRipple>
           Edit
         </MenuItem>
-        <MenuItem onClick={openDelete} disableRipple>
+        {isOpenEdit && (
+          <ModalEdit
+            openModal={isOpenEdit}
+            closeModal={closeModalEdit}
+            handleClose={handleClose}
+            setDeliveryHistory={setDeliveryHistory}
+            deliveryHistory={deliveryHistory}
+            id={orderId}
+          />
+        )}
+        <MenuItem onClick={openModalDelete} disableRipple>
           Delete
         </MenuItem>
       </StyledMenu>
-      {openModalDelete && (
+      {isOpenDelete && (
         <ModalDelete
-          openModal={openModalDelete}
-          onClose={closeDelete}
+          openModal={isOpenDelete}
+          onClose={closeModalDelete}
           renderBody={() => {
             return (
               <Box>
@@ -139,7 +145,7 @@ const MenuDelivery = ({ orderId, deliveryHistory, setDeliveryHistory }) => {
                   >
                     delete
                   </Button>
-                  <Button variant="outlined" onClick={closeDelete}>
+                  <Button variant="outlined" onClick={closeModalDelete}>
                     cancel
                   </Button>
                 </Stack>
