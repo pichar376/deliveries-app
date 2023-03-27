@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/deliveries-app/static/css/main.28efa2ae.css",
+    "main.js": "/deliveries-app/static/js/main.7501def0.js",
+    "static/js/787.18b2f8d8.chunk.js": "/deliveries-app/static/js/787.18b2f8d8.chunk.js",
+    "index.html": "/deliveries-app/index.html",
+    "main.28efa2ae.css.map": "/deliveries-app/static/css/main.28efa2ae.css.map",
+    "main.7501def0.js.map": "/deliveries-app/static/js/main.7501def0.js.map",
+    "787.18b2f8d8.chunk.js.map": "/deliveries-app/static/js/787.18b2f8d8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28efa2ae.css",
+    "static/js/main.7501def0.js"
+  ]
+}
