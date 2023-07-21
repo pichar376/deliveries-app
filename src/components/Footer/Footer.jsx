@@ -1,14 +1,16 @@
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { footerStyleStack, footerItemStyles } from "./Footer.styles";
 
 const Footer = () => {
   return (
-    <Stack direction="row" sx={footerStyleStack}>
-      <Typography sx={{ ...footerItemStyles, flexGrow: 1 }}>
-        Powered by Nuvo Cargo
-      </Typography>
-      <Typography>Help</Typography>
-    </Stack>
+    <Box sx={{ width: "100%", margin: "1rem auto" }}>
+      <Stack direction="row" sx={{ ...footerStyleStack }}>
+        <Typography sx={{ ...footerItemStyles }}>
+          Powered by Nuvo Cargo
+        </Typography>
+        <Typography>Developed by PicharDev</Typography>
+      </Stack>
+    </Box>
   );
 };
 

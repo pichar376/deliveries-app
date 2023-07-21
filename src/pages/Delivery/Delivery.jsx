@@ -30,8 +30,8 @@ const Delivery = () => {
 
           <Route path="/shipment/:id" element={<Shipment />} />
         </Routes>
-        <Footer />
       </Box>
+      <Footer />
     </ThemeProvider>
   );
 };

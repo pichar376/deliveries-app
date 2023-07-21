@@ -11,7 +11,7 @@ const Shipment = () => {
     navigate("/");
   };
   return (
-    <Box>
+    <Box sx={{ flexGrow: "1" }}>
       <Button sx={{ marginTop: "30px", color: "#307460" }} onClick={goToHome}>
         {"<<"}Go Back
       </Button>

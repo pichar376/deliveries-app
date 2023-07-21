@@ -1,6 +1,7 @@
 export const footerStyleStack = {
-  margin: "48px 0 ",
-  alignItems: "center",
+  width: "100%",
+  display: "flex",
+  justifyContent: "space-between",
 }
 
 export const footerItemStyles = {
