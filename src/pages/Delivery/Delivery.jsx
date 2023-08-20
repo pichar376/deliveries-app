@@ -1,4 +1,4 @@
-import { Box, ThemeProvider, Typography } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import Header from "../../components/Header/Header";
 import TableData from "../../components/TableData/Table-data";
 import Footer from "../../components/Footer/Footer";
@@ -19,7 +19,7 @@ const Delivery = () => {
         <Header />
         <Routes>
           <Route
-            path="/"
+            path="/deliveries-app"
             element={
               <TableData
                 deliveryHistory={deliveryHistory}
